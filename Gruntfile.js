@@ -260,12 +260,16 @@ var path           = require('path'),
             // Compile all the SASS!
             sass: {
                 admin: {
+                    options: {
+                        includePaths: require('node-bourbon').includePaths
+                    },
                     files: {
                         '<%= paths.adminAssets %>/css/screen.css': '<%= paths.adminAssets %>/sass/screen.scss'
                     }
                 },
                 compress: {
                     options: {
+                        includePaths: require('node-bourbon').includePaths,
                         style: 'compressed'
                     },
                     files: {
